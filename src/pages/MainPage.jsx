@@ -1,7 +1,15 @@
 import React from 'react';
+// import UserContentCard from '@components/domain/UserContentCard';
+import UserContentList from '@components/domain/UserContentList';
+import Header from '@components/domain/Header';
 
 const MainPage = () => {
-  return <div>MainPage</div>;
+  return (
+    <>
+      <Header />
+      <UserContentList />
+    </>
+  );
 };
 
 export default MainPage;
