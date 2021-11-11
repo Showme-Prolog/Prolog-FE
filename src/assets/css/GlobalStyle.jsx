@@ -10,7 +10,8 @@ const Globalstyle = createGlobalStyle`
     *{
         box-sizing:border-box;
     }
-    html{
+    body{
+        width: 100%;
         font-family: 'NotoSansCJK Variable';
         font-weight: 400;
         font-style: normal;
