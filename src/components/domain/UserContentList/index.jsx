@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { TopButton } from '@components/common/Button';
 import UserContentCard from '../UserContentCard';
 
 const DUMMY_DATA = [
@@ -42,13 +43,33 @@ const UserContentListWrapper = styled.div`
   min-height: 100vh;
 `;
 
+const TopButtonWrapper = styled.div`
+  width: 100%;
+  height: 84px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const renderUserContentCard = (data) =>
   data.map(({ username, src }, index) => (
     <UserContentCard key={index} src={src} username={username} />
   ));
 
+const moveOnTop = () => (document.documentElement.scrollTop = 0);
 const UserContentList = () => {
-  return <UserContentListWrapper>{renderUserContentCard(DUMMY_DATA)}</UserContentListWrapper>;
+  return (
+    <>
+      <UserContentListWrapper>
+        {renderUserContentCard(DUMMY_DATA)}
+        {DUMMY_DATA.length > 6 && (
+          <TopButtonWrapper>
+            <TopButton onClick={moveOnTop} />
+          </TopButtonWrapper>
+        )}
+      </UserContentListWrapper>
+    </>
+  );
 };
 
 export default UserContentList;
