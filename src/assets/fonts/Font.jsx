@@ -18,4 +18,10 @@ export default {
     line-height: 20px;
     font-weight: Bold;
   `,
+
+  Text3_Regular: css`
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+  `,
 };

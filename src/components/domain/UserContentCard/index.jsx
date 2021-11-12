@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import color from '@assets/colors/Color';
 import font from '@assets/fonts/Font';
+import UserDetailContent from '@components/common/UserDetailContent';
 
 const UserCardWrapper = styled.div`
   position: relative;
@@ -37,18 +38,9 @@ const UserName = styled.h2`
   margin-bottom: 4px;
 `;
 
-const UserDetailContent = styled.span`
-  ${font.Text2_Regular}
-  color: ${color.white};
-
-  &:first-of-type {
-    margin-bottom: 1px;
-  }
-`;
-
-const UserContentCard = ({ src = null, username = '미정' }) => {
+const UserContentCard = ({ src = null, username = '미정', id }) => {
   return (
-    <UserCardWrapper src={src}>
+    <UserCardWrapper src={src} key={id}>
       <UserContentWrapper>
         <UserName>{username}</UserName>
         <UserDetailContent>운영위원회 총무</UserDetailContent>
