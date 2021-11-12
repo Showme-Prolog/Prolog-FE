@@ -1,12 +1,11 @@
 import React from 'react';
-// import UserContentCard from '@components/domain/UserContentCard';
 import UserContentList from '@components/domain/UserContentList';
-import Header from '@components/domain/Header';
+import MainHeader from '@components/domain/MainHeader';
 
 const MainPage = () => {
   return (
     <>
-      <Header />
+      <MainHeader />
       <UserContentList />
     </>
   );
