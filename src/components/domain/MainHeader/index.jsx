@@ -31,7 +31,7 @@ const iconStyle = {
   cursor: 'pointer',
 };
 
-const Header = ({ title = 'SOPT' }) => {
+const MainHeader = ({ title = 'SOPT' }) => {
   return (
     <HeaderWrapper>
       <HeaderItem align="left">
@@ -48,4 +48,4 @@ const Header = ({ title = 'SOPT' }) => {
   );
 };
 
-export default Header;
+export default MainHeader;
