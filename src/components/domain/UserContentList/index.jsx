@@ -62,7 +62,7 @@ const TopButtonWrapper = styled.div`
 
 const renderUserContentCard = (data) =>
   data.map(({ username, src, id }) => (
-    <Link to={{ pathname: `/${id}` }} key={id}>
+    <Link to={{ pathname: `/user/${id}` }} key={id}>
       <UserContentCard src={src} username={username} key={id} />
     </Link>
   ));
