@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import font from '@assets/fonts/Font';
 import { ReactComponent as TabBarICon } from '@assets/icons/tab-bar-icon.svg';
 import { ReactComponent as IntroCreateIcon } from '@assets/icons/pencil-icon.svg';
@@ -41,7 +42,9 @@ const MainHeader = ({ title = 'SOPT' }) => {
         <HeaderTitle>{title}</HeaderTitle>
       </HeaderItem>
       <HeaderItem align="right">
-        <IntroCreateIcon style={iconStyle} />
+        <Link to={{ pathname: `/user/create` }}>
+          <IntroCreateIcon style={iconStyle} />
+        </Link>
         <SearchIcon style={iconStyle} />
       </HeaderItem>
     </HeaderWrapper>

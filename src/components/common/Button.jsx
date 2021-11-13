@@ -1,5 +1,6 @@
 import React from 'react';
 import color from '@assets/colors/Color';
+import font from '@assets/fonts/Font';
 import { ReactComponent as TopArrowIcon } from '@assets/icons/top-arrow.svg';
 import styled from 'styled-components';
 
@@ -33,4 +34,16 @@ export const TopButton = ({ ...rest }) => (
   <TopRoot type="button" {...rest}>
     <TopArrowIcon style={TopIconStyle} />
   </TopRoot>
+);
+
+const CompleteRoot = styled(Root)`
+  color: ${color.white};
+  background-color: ${color.grey500};
+  ${font.Text3_Regular}
+`;
+
+export const CompleteButton = ({ text, ...rest }) => (
+  <CompleteRoot type="submit" {...rest}>
+    {text}
+  </CompleteRoot>
 );

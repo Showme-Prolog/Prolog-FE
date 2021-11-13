@@ -1,16 +1,17 @@
 import React, { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { MainPage } from '@pages';
-import { UserDetailPage } from '@pages';
+import { MainPage, UserDetailPage, UserCreatePage } from '@pages';
 import DefaultTemplate from '../templates/DefaultTemplate';
+
 const Router = () => {
   return (
     <BrowserRouter>
-      <Switch>
-        <DefaultTemplate>
+      <DefaultTemplate>
+        <Switch>
           <Route path="/" component={MainPage} exact />
-          <Route path="/:id" component={UserDetailPage} exact />
-        </DefaultTemplate>
-      </Switch>
+          <Route path="/user/create" component={UserCreatePage} exact />
+          <Route path="/user/:id" component={UserDetailPage} exact />
+        </Switch>
+      </DefaultTemplate>
     </BrowserRouter>
   );
 };
