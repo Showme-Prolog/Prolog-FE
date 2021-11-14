@@ -18,7 +18,7 @@ const DUMMY_DATA = [
   {
     id: 3,
     username: '이남준',
-    src: 'https://picsum.photos/600/600',
+    src: 'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/f1594c80-e5b8-4923-9f79-1ba821d7d442/1560571583658-11.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20211114%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211114T054555Z&X-Amz-Expires=86400&X-Amz-Signature=577636548e9cc4dbdc97e53386de26b480ca33c48fca04ab9abc01f45a6d492e&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%221560571583658-11.jpg%22',
   },
   {
     id: 4,
