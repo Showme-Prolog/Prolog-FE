@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import color from '@assets/colors/Color';
 import Icon from '@components/common/Icon';
 import font from '@assets/fonts/Font';
 import { ReactComponent as TabBarICon } from '@assets/icons/tab-bar-icon.svg';
@@ -24,7 +25,10 @@ const HeaderItem = styled.div`
 `;
 
 const HeaderTitle = styled.h1`
-  ${font.Text1_18px}
+  ${font.Text1_18px};
+  color: ${color.white};
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+  font-weight: bold;
 `;
 
 const iconStyle = {
