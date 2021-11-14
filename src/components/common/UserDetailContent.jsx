@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import color from '@assets/colors/Color';
 import font from '@assets/fonts/Font';
 const UserDetailContent = styled.span`
-  ${font.Text2_Regular}
+  ${font.Text2_11px}
   color: ${color.white};
 
   &:first-of-type {

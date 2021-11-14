@@ -16,7 +16,7 @@ const UserCreateWrapper = styled.div`
   margin: 17px 0;
   border-radius: 15px;
   flex-direction: column;
-  background-color: ${color.grey500};
+  background-color: ${color.cheese};
 `;
 const InnerWrapper = styled.div`
   width: 100%;
@@ -36,10 +36,10 @@ const DragDropLabel = styled.label`
   width: 100%;
   height: 300px;
   transition: 0.3s ease-in;
-  background-color: ${color.grey400};
+  background-color: ${color.cheese};
   border-radius: 15px;
   &:active {
-    background-color: ${color.grey600};
+    background-color: ${color.cheese};
   }
 `;
 
@@ -57,7 +57,7 @@ const QuestionBox = styled.div`
   margin-bottom: 16px;
 `;
 const QuestionText = styled.h3`
-  ${font.Text2_Bold}
+  ${font.Text1_14px}
   margin-bottom: 5px;
 `;
 

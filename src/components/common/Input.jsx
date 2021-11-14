@@ -5,14 +5,14 @@ import styled from 'styled-components';
 
 const Root = styled.textarea`
   width: 100%;
-  ${font.Text3_Regular}
+  ${font.Text2_12px}
   border: none;
   text-decoration: none;
   background-color: inherit;
   resize: none;
   &:focus {
     outline: none;
-    border-bottom: 1px solid ${color.grey400};
+    border-bottom: 1px solid ${color.orange};
   }
 `;
 
@@ -21,7 +21,7 @@ const Input = ({ ...rest }) => <Root type="text" {...rest} />;
 export default Input;
 
 const DetailQuestionRoot = styled.input`
-  ${font.Text2_Regular}
+  ${font.Text2_11px}
   width: 100%;
   border: none;
   text-decoration: none;
@@ -29,7 +29,7 @@ const DetailQuestionRoot = styled.input`
   color: ${color.white};
   &:focus {
     outline: none;
-    border-bottom: 1px solid ${color.grey400};
+    border-bottom: 1px solid ${color.orange};
   }
   &::-webkit-input-placeholder {
     color: ${color.white};
@@ -49,7 +49,7 @@ const DetailQuestionRoot = styled.input`
 `;
 
 const QuestionRoot = styled(Root)`
-  ${font.Text3_Regular}
+  ${font.Text2_12px}
   color: ${color.white};
   &::-webkit-input-placeholder {
     color: ${color.white};

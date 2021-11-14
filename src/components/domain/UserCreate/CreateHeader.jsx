@@ -23,7 +23,7 @@ const HeaderItem = styled.div`
 `;
 
 const UsernameText = styled.h2`
-  ${font.Display1_Bold}
+  ${font.Text1_18px}
   color: ${color.white};
 `;
 

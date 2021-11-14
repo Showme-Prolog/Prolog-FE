@@ -8,7 +8,7 @@ const UserCardWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 160px;
-  background-color: ${({ src }) => (src ? 'null' : `${color.grey500}`)};
+  background-color: ${({ src }) => (src ? 'null' : `${color.cheese}`)};
   background-image: ${({ src }) => (src ? `url(${src})` : 'null')};
   background-size: cover;
   background-position: center;
@@ -33,7 +33,7 @@ const UserContentWrapper = styled.div`
 `;
 
 const UserName = styled.h2`
-  ${font.Text2_Bold}
+  ${font.Text1_14px}
   color: ${color.white};
   margin-bottom: 4px;
 `;

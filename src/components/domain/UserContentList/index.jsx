@@ -12,12 +12,12 @@ const DUMMY_DATA = [
   },
   {
     id: 2,
-    username: '김민서',
+    username: '이남준',
     src: 'https://picsum.photos/800/800',
   },
   {
     id: 3,
-    username: '이남준',
+    username: '조양원',
     src: 'https://picsum.photos/900/800',
   },
   {

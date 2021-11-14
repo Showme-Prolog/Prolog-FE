@@ -21,7 +21,7 @@ const TopRoot = styled(Root)`
   width: ${({ size }) => (size ? `${size}px` : '44px')};
   height: 44px;
   border-radius: 50%;
-  background-color: ${color.grey500};
+  background-color: ${color.orange};
   box-shadow: 0px 4px 4px 0px ${color.black_40};
 `;
 
@@ -38,8 +38,8 @@ export const TopButton = ({ ...rest }) => (
 
 const CompleteRoot = styled(Root)`
   color: ${color.white};
-  background-color: ${color.grey500};
-  ${font.Text3_Regular}
+  background-color: ${color.orange};
+  ${font.Text2_12px}
 `;
 
 export const CompleteButton = ({ text, ...rest }) => (

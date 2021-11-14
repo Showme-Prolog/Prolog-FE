@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Icon from '@components/common/Icon';
 import font from '@assets/fonts/Font';
 import { ReactComponent as TabBarICon } from '@assets/icons/tab-bar-icon.svg';
-import { ReactComponent as IntroCreateIcon } from '@assets/icons/pencil-icon.svg';
+import IntroCreateIcon from '@assets/icons/pencil-icon.svg';
 import { ReactComponent as SearchIcon } from '@assets/icons/search-icon.svg';
 import styled from 'styled-components';
 
@@ -23,7 +24,7 @@ const HeaderItem = styled.div`
 `;
 
 const HeaderTitle = styled.h1`
-  ${font.Display1_Bold}
+  ${font.Text1_18px}
 `;
 
 const iconStyle = {
@@ -43,7 +44,7 @@ const MainHeader = ({ title = 'SOPT' }) => {
       </HeaderItem>
       <HeaderItem align="right">
         <Link to={{ pathname: `/user/create` }}>
-          <IntroCreateIcon style={iconStyle} />
+          <Icon src={IntroCreateIcon} />
         </Link>
         <SearchIcon style={iconStyle} />
       </HeaderItem>

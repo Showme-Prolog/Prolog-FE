@@ -59,7 +59,7 @@ const UserDetailWrapper = styled.div`
   margin: 17px 0;
   border-radius: 15px;
   flex-direction: column;
-  background-color: ${color.grey500};
+  background-color: ${color.cheese};
 `;
 const InnerWrapper = styled.div`
   width: 100%;
