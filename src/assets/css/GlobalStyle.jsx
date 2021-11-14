@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
+import color from '@assets/colors/Color';
 
 const Globalstyle = createGlobalStyle`
     ${reset};
@@ -12,9 +13,9 @@ const Globalstyle = createGlobalStyle`
     }
     body{
         width: 100%;
-        font-family: 'NotoSansCJK Variable';
+        font-family: 'NanumSquare', sans-serif;
         font-weight: 400;
-        font-style: normal;
+        background-color: ${color.black};
     }
 `;
 

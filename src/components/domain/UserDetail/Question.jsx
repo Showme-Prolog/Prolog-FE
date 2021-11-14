@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import font from '@assets/fonts/Font';
 import color from '@assets/colors/Color';
+
 const QuestionWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -17,12 +18,12 @@ const QuestionBox = styled.div`
 `;
 
 const QuestionText = styled.h3`
-  ${font.Text2_Bold}
+  ${font.Text1_14px}
   margin-bottom: 5px;
 `;
 
 const AnswerText = styled.p`
-  ${font.Text3_Regular}
+  ${font.Text2_12px}
 `;
 
 const Question = ({ question }) => {

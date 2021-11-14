@@ -1,9 +1,11 @@
 export default {
-  black: '#000000',
-  white: '#ffffff',
-  grey900: '#363636',
-  grey400: '#C4C4C4', // side-icon
-  grey500: '#868686', // card-background
-  grey600: '#5B5B5B', // side-menu
-  black_40: '#00000040', // box-shadow
+  black: '#383b3f', // primary
+  white: '#ffffff', // textColor
+  salmon: '#ff6666', // linear-gradient
+  orange: '#ffA85F', // linear-gradient
+  cheese: '#ffc629', // linear-gradient
+  black_40: '#0006', // card-background
+  black_94: '#383b3ff0', // modal
+  black_linear: 'linear-gradient(to bottom, #383b3f, #383b3fb3, #383b3f00)',
+  icon_linear: 'linear-gradient(135deg, #ff6666 6%, #ffa85f 43%, #ffc629 100%)',
 };
