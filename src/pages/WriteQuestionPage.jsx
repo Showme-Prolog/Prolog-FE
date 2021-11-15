@@ -1,59 +1,14 @@
 import React from 'react';
-import { useSwipeable } from 'react-swipeable';
-import { useParams } from 'react-router';
 import color from '@assets/colors/Color';
+import font from '@assets/fonts/Font';
 import Icon from '@components/common/Icon';
-import ProfileImage from '@components/domain/UserDetail/ProfileImage';
 import styled from 'styled-components';
-
-import { TopButton } from '@components/common/Button';
-import UserDetailContent from '@components/common/UserDetailContent';
-import DetailHeader from '@components/domain/UserDetail/DetailHeader';
-import Question from '@components/domain/UserDetail/Question';
-
-// const DUMMY_DATA = {
-//   username: '유저이름',
-//   profile: 'https://picsum.photos/900/800',
-//   detail: [
-//     {
-//       content: '저는 공부를 좋아해요.',
-//     },
-//     {
-//       content: '저는 공부를 좋아해요.',
-//     },
-//     {
-//       content: '저는 공부를 좋아해요.',
-//     },
-//   ],
-//   question: [
-//     {
-//       Q: '무슨 공부를 좋아하세요?',
-//       A: 'Lorem ipsum dolor sit met, consectetur adipiscing elit. Sem nisi, congue bibendum elementum, feugiat fermentum donec justo. Curabitur interdum aliquet scelerisque senectus pellentesque mauris.',
-//     },
-//     {
-//       Q: '무슨 공부를 좋아하세요?',
-//       A: 'Lorem ipsum dolor sit met, consectetur adipiscing elit. Sem nisi, congue bibendum elementum, feugiat fermentum donec justo. Curabitur interdum aliquet scelerisque senectus pellentesque mauris.',
-//     },
-//     {
-//       Q: '무슨 공부를 좋아하세요?',
-//       A: 'Lorem ipsum dolor sit met, consectetur adipiscing elit. Sem nisi, congue bibendum elementum, feugiat fermentum donec justo. Curabitur interdum aliquet scelerisque senectus pellentesque mauris.',
-//     },
-//     {
-//       Q: '무슨 공부를 좋아하세요?',
-//       A: 'Lorem ipsum dolor sit met, consectetur adipiscing elit. Sem nisi, congue bibendum elementum, feugiat fermentum donec justo. Curabitur interdum aliquet scelerisque senectus pellentesque mauris.',
-//     },
-//     {
-//       Q: '무슨 공부를 좋아하세요?',
-//       A: 'Lorem ipsum dolor sit met, consectetur adipiscing elit. Sem nisi, congue bibendum elementum, feugiat fermentum donec justo. Curabitur interdum aliquet scelerisque senectus pellentesque mauris.',
-//     },
-//     {
-//       Q: '무슨 공부를 좋아하세요?',
-//       A: 'Lorem ipsum dolor sit met, consectetur adipiscing elit. Sem nisi, congue bibendum elementum, feugiat fermentum donec justo. Curabitur interdum aliquet scelerisque senectus pellentesque mauris.',
-//     },
-//   ],
-// };
+import CreateHeader from '@components/domain/UserCreate/CreateHeader';
+import IntroCreateIcon from '@assets/icons/pencil-icon.svg';
 
 const SectionQuestion = styled.section`
+  width: 100%;
+  padding: 0 6px;
   & + section {
     margin-top: 34px;
   }
@@ -67,7 +22,7 @@ const SectionTitle = styled.h2`
 `;
 
 const QuestionList = styled.ul`
-  margin-top: 18px;
+  margin: 18px 4px 0;
 `;
 
 const QuestionListItem = styled.li`
@@ -79,7 +34,7 @@ const QuestionListItem = styled.li`
 `;
 
 const QuestionListItemNum = styled.span`
-  margin: 3px 3px 0 0;
+  margin-top: 3px;
   ${font.Text1_14px};
   font-weight: bold;
   color: ${color.white};
@@ -87,21 +42,52 @@ const QuestionListItemNum = styled.span`
 `;
 
 const QuestionListItemText = styled.input`
-  padding-top: 3px;
-  border-bottom: 1.5px;
+  padding: 3px;
+  margin: 0 11px 0 3px;
+  background: 0;
+  border: 0;
+  border-bottom: 2px solid #fff;
   ${font.Text1_12px};
   font-weight: bold;
   color: ${color.white};
+  flex: 1;
+  line-height: 14px;
 `;
 
 const QuestionListItemButton = styled.button`
+  position: relative;
   width: 22px;
   height: 22px;
+  background: 0;
+  border: 0;
+
+  &:after {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    width: 12px;
+    height: 2px;
+    background-color: #fff;
+    content: '';
+  }
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    filter: blur(4px);
+    background-image: linear-gradient(134deg, #ff6666 23%, #ffa85f 50%, #ffc629 100%);
+    content: '';
+  }
 `;
 
 const WriteQuestionPage = () => {
   return (
     <>
+      <CreateHeader username="최민석" />
       {/* 세부사항 질문 */}
       <SectionQuestion>
         <SectionTitle>세부사항 질문</SectionTitle>
@@ -109,8 +95,13 @@ const WriteQuestionPage = () => {
           {/* li 반복 및 추가 */}
           <QuestionListItem>
             <QuestionListItemNum>01</QuestionListItemNum>
-            <QuestionListItemText>작성되면 이 느낌</QuestionListItemText>
-            <QuestionListItemButton>제거버튼</QuestionListItemButton>
+            <QuestionListItemText type="text"></QuestionListItemText>
+            <QuestionListItemButton></QuestionListItemButton>
+          </QuestionListItem>
+          <QuestionListItem>
+            <QuestionListItemNum>02</QuestionListItemNum>
+            <QuestionListItemText type="text"></QuestionListItemText>
+            <QuestionListItemButton></QuestionListItemButton>
           </QuestionListItem>
         </QuestionList>
       </SectionQuestion>
@@ -121,8 +112,8 @@ const WriteQuestionPage = () => {
           {/* li 반복 및 추가 */}
           <QuestionListItem>
             <QuestionListItemNum>01</QuestionListItemNum>
-            <QuestionListItemText>작성되면 이 느낌</QuestionListItemText>
-            <QuestionListItemButton>제거버튼</QuestionListItemButton>
+            <QuestionListItemText type="text"></QuestionListItemText>
+            <QuestionListItemButton></QuestionListItemButton>
           </QuestionListItem>
         </QuestionList>
       </SectionQuestion>
