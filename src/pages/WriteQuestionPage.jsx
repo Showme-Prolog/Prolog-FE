@@ -9,7 +9,7 @@ import IntroCreateIcon from '@assets/icons/pencil-icon.svg';
 const SectionQuestion = styled.section`
   width: 100%;
   padding: 0 6px;
-  & + section {
+  & + & {
     margin-top: 34px;
   }
 `;
@@ -56,32 +56,11 @@ const QuestionListItemText = styled.input`
 
 const QuestionListItemButton = styled.button`
   position: relative;
-  width: 22px;
-  height: 22px;
+  padding: 0;
   background: 0;
   border: 0;
-
-  &:after {
-    position: absolute;
-    top: 10px;
-    left: 5px;
-    width: 12px;
-    height: 2px;
-    background-color: #fff;
-    content: '';
-  }
-
-  &:before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 50%;
-    filter: blur(4px);
-    background-image: linear-gradient(134deg, #ff6666 23%, #ffa85f 50%, #ffc629 100%);
-    content: '';
-  }
+  width: 22px;
+  height: 22px;
 `;
 
 const WriteQuestionPage = () => {
@@ -96,12 +75,16 @@ const WriteQuestionPage = () => {
           <QuestionListItem>
             <QuestionListItemNum>01</QuestionListItemNum>
             <QuestionListItemText type="text"></QuestionListItemText>
-            <QuestionListItemButton></QuestionListItemButton>
+            <QuestionListItemButton>
+              <Icon src={IntroCreateIcon} />
+            </QuestionListItemButton>
           </QuestionListItem>
           <QuestionListItem>
             <QuestionListItemNum>02</QuestionListItemNum>
             <QuestionListItemText type="text"></QuestionListItemText>
-            <QuestionListItemButton></QuestionListItemButton>
+            <QuestionListItemButton>
+              <Icon src={IntroCreateIcon} />
+            </QuestionListItemButton>
           </QuestionListItem>
         </QuestionList>
       </SectionQuestion>
@@ -113,7 +96,9 @@ const WriteQuestionPage = () => {
           <QuestionListItem>
             <QuestionListItemNum>01</QuestionListItemNum>
             <QuestionListItemText type="text"></QuestionListItemText>
-            <QuestionListItemButton></QuestionListItemButton>
+            <QuestionListItemButton>
+              <Icon src={IntroCreateIcon} />
+            </QuestionListItemButton>
           </QuestionListItem>
         </QuestionList>
       </SectionQuestion>
