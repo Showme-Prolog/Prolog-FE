@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import color from '@assets/colors/Color';
 import Icon from '@components/common/Icon';
 import font from '@assets/fonts/Font';
-import { ReactComponent as TabBarICon } from '@assets/icons/tab-bar-icon.svg';
+import TabBarICon from '@assets/icons/tab-bar-icon.svg';
 import IntroCreateIcon from '@assets/icons/pencil-icon.svg';
-import { ReactComponent as SearchIcon } from '@assets/icons/search-icon.svg';
+import SearchIcon from '@assets/icons/search-icon.svg';
 import styled from 'styled-components';
 
 const HeaderWrapper = styled.header`
@@ -31,26 +31,34 @@ const HeaderTitle = styled.h1`
   font-weight: bold;
 `;
 
-const iconStyle = {
-  width: 16,
-  height: 16,
-  cursor: 'pointer',
-};
+const HeaderMenuBtn = styled.button`
+  width: 22px;
+  height: 22px;
+
+  svg {
+    width: 22px;
+    height: 22px;
+  }
+`;
 
 const MainHeader = ({ title = 'SOPT' }) => {
   return (
     <HeaderWrapper>
       <HeaderItem align="left">
-        <TabBarICon style={iconStyle} />
+        <HeaderMenuBtn type="button">
+          <Icon src={TabBarICon} />
+        </HeaderMenuBtn>
       </HeaderItem>
       <HeaderItem align="center">
         <HeaderTitle>{title}</HeaderTitle>
       </HeaderItem>
       <HeaderItem align="right">
-        <Link to={{ pathname: `/user/create` }}>
+        <HeaderMenuBtn type="button" to={{ pathname: `/user/create` }}>
           <Icon src={IntroCreateIcon} />
-        </Link>
-        <SearchIcon style={iconStyle} />
+        </HeaderMenuBtn>
+        <HeaderMenuBtn type="button">
+          <Icon src={SearchIcon} />
+        </HeaderMenuBtn>
       </HeaderItem>
     </HeaderWrapper>
   );

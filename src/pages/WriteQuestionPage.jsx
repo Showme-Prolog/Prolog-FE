@@ -3,8 +3,8 @@ import color from '@assets/colors/Color';
 import font from '@assets/fonts/Font';
 import Icon from '@components/common/Icon';
 import styled from 'styled-components';
-import CreateHeader from '@components/domain/UserCreate/CreateHeader';
-import IntroCreateIcon from '@assets/icons/pencil-icon.svg';
+import WriteQuestionHeader from '@components/domain/WriteQuestionHeader/WriteQuestionHeader';
+import DelIcon from '@assets/icons/del-bar.svg';
 
 const SectionQuestion = styled.section`
   width: 100%;
@@ -66,7 +66,7 @@ const QuestionListItemButton = styled.button`
 const WriteQuestionPage = () => {
   return (
     <>
-      <CreateHeader username="최민석" />
+      <WriteQuestionHeader username="최민석" />
       {/* 세부사항 질문 */}
       <SectionQuestion>
         <SectionTitle>세부사항 질문</SectionTitle>
@@ -76,14 +76,14 @@ const WriteQuestionPage = () => {
             <QuestionListItemNum>01</QuestionListItemNum>
             <QuestionListItemText type="text"></QuestionListItemText>
             <QuestionListItemButton>
-              <Icon src={IntroCreateIcon} />
+              <Icon src={DelIcon} />
             </QuestionListItemButton>
           </QuestionListItem>
           <QuestionListItem>
             <QuestionListItemNum>02</QuestionListItemNum>
             <QuestionListItemText type="text"></QuestionListItemText>
             <QuestionListItemButton>
-              <Icon src={IntroCreateIcon} />
+              <Icon src={DelIcon} />
             </QuestionListItemButton>
           </QuestionListItem>
         </QuestionList>
@@ -97,7 +97,7 @@ const WriteQuestionPage = () => {
             <QuestionListItemNum>01</QuestionListItemNum>
             <QuestionListItemText type="text"></QuestionListItemText>
             <QuestionListItemButton>
-              <Icon src={IntroCreateIcon} />
+              <Icon src={DelIcon} />
             </QuestionListItemButton>
           </QuestionListItem>
         </QuestionList>
