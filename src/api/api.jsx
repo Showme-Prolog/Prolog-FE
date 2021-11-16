@@ -1,5 +1,5 @@
 import axios from 'axios';
-const SERVER_URL = 'http://localhost:5000/';
+const SERVER_URL = 'http://3.38.10.254/api';
 
 const Api = ({ url, type = 'GET', params, contentType = 'application/json' }) => {
   const headers = {
@@ -8,11 +8,12 @@ const Api = ({ url, type = 'GET', params, contentType = 'application/json' }) =>
     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH',
     'Access-Control-Allow-Headers':
       'Origin,Accept,X-Requested-With,Content-Type,Access-Control-Request-Method,Access-Control-Request-Headers,Authorization',
+    mode: 'cors',
   };
 
-  if (accessToken !== null) {
-    headers.Authorization = `Bearer ${accessToken}`;
-  }
+  // if (accessToken !== null) {
+  //   headers.Authorization = `Bearer ${accessToken}`;
+  // }
 
   return axios({
     method: type,
