@@ -17,6 +17,12 @@ const Globalstyle = createGlobalStyle`
         font-weight: 400;
         background-color: ${color.black};
     }
+    button {
+        border: 0;
+        background: 0;
+        padding: 0;
+        margin: 0;
+    }
 `;
 
 export default Globalstyle;

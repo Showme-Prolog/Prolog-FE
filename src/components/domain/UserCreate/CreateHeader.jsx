@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import { useHistory } from 'react-router';
 import font from '@assets/fonts/Font';
 import color from '@assets/colors/Color';
-import { ReactComponent as BackArrowIcon } from '@assets/icons/back-arrow.svg';
+import Icon from '@components/common/Icon';
+import BackArrowIcon from '@assets/icons/back-arrow.svg';
 import { CompleteButton } from '@components/common/Button';
 
 const HeaderWrapper = styled.header`
@@ -27,6 +28,13 @@ const UsernameText = styled.h2`
   color: ${color.white};
 `;
 
+const BackBtn = styled.button`
+  position: relative;
+  width: 22px;
+  height: 22px;
+  z-index: 1;
+`;
+
 const DetailHeader = ({ username }) => {
   const history = useHistory();
 
@@ -37,7 +45,9 @@ const DetailHeader = ({ username }) => {
   return (
     <HeaderWrapper>
       <HeaderItem style={{ marginLeft: '9px' }} align="left">
-        <BackArrowIcon onClick={handleBack} />
+        <BackBtn type="button" onClick={handleBack}>
+          <Icon src={BackArrowIcon} />
+        </BackBtn>
       </HeaderItem>
       <HeaderItem>
         <UsernameText align="center">{username}</UsernameText>
