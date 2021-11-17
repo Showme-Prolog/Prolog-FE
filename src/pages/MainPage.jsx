@@ -25,7 +25,7 @@ const MainPage = () => {
         질문 입력 페이지
       </Link>
       <Link to="/questiondetail" style={{ color: 'white' }}>
-        질문 입력 페이지
+        질문 선택 페이지
       </Link>
     </>
   );
