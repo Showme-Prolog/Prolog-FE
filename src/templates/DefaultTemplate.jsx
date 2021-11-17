@@ -9,7 +9,8 @@ const MainWrapper = styled.div`
   ${MediaQueries(BREAKPOINT_PHONE)} {
     align-items: center;
     flex-direction: column;
-    padding: 0 26px;
+    padding: 0 32px;
+    overflow-y: auto;
   }
 `;
 

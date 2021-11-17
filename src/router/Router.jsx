@@ -1,11 +1,18 @@
 import React, { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { MainPage, UserDetailPage, UserCreatePage, WriteQuestionPage } from '@pages';
+import {
+  MainPage,
+  UserDetailPage,
+  UserCreatePage,
+  WriteQuestionPage,
+  WriteQuestionPageDetail,
+} from '@pages';
 import DefaultTemplate from '../templates/DefaultTemplate';
-import { WriteQuestionPageDetail } from '../pages';
+import ScrollToTop from '@utils/ScrollToTop';
 
 const Router = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <DefaultTemplate>
         <Switch>
           <Route path="/" component={MainPage} exact />
@@ -13,6 +20,9 @@ const Router = () => {
           <Route path="/question" component={WriteQuestionPage} exact />
           <Route path="/questiondetail" component={WriteQuestionPageDetail} exact />
           <Route path="/user/:id" component={UserDetailPage} exact />
+          <Route path="*">
+            <div>404 Not Found</div>
+          </Route>
         </Switch>
       </DefaultTemplate>
     </BrowserRouter>
