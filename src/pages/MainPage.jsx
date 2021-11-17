@@ -21,8 +21,12 @@ const MainPage = () => {
     <>
       <MainHeader />
       <UserContentList />
-      <Link to="/question" />
-      <Link to="/questiondetail" />
+      <Link to="/question" style={{ color: 'white ' }}>
+        질문 입력 페이지
+      </Link>
+      <Link to="/questiondetail" style={{ color: 'white' }}>
+        질문 입력 페이지
+      </Link>
     </>
   );
 };
