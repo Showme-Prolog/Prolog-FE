@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSwipeable } from 'react-swipeable';
+import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router';
 import color from '@assets/colors/Color';
 import ProfileImage from '@components/domain/UserDetail/ProfileImage';
@@ -9,6 +10,8 @@ import { TopButton } from '@components/common/Button';
 import UserDetailContent from '@components/common/UserDetailContent';
 import DetailHeader from '@components/domain/UserDetail/DetailHeader';
 import Question from '@components/domain/UserDetail/Question';
+import { useSelector } from 'react-redux';
+import { fetchIntroduction } from '../redux/introduction';
 
 const DUMMY_DATA = {
   username: '유저이름',
@@ -56,22 +59,17 @@ const UserDetailWrapper = styled.div`
   display: flex;
   width: 100%;
   min-height: 100vh;
-  margin: 17px 0;
-  border-radius: 15px;
   flex-direction: column;
-  background-color: ${color.cheese};
 `;
 const InnerWrapper = styled.div`
   width: 100%;
-  padding: 0 21px;
   margin: 0 auto;
 `;
 
 const UserDetailContentWrapper = styled.div`
   display: flex;
   width: 100%;
-  margin-top: 10px;
-  margin-bottom: 18px;
+  margin: 14px 0;
   flex-direction: column;
 `;
 const moveOnTop = () => (document.documentElement.scrollTop = 0);
@@ -80,7 +78,11 @@ const renderDetailContent = ({ detail }) =>
 
 const UserDetailPage = () => {
   const { id } = useParams();
+  const data = useSelector((state) => state.introduction.introduction);
+  const dispatch = useDispatch();
 
+  console.log(data);
+  // const introduction = useSelector((state) => state.user.introduction);
   const pageHandler = useSwipeable({
     onSwipedRight: (SwipeEventData) => {
       alert('left');
@@ -89,6 +91,10 @@ const UserDetailPage = () => {
       alert('right');
     },
   });
+
+  useEffect(() => {
+    dispatch(fetchIntroduction(parseInt(id)));
+  }, [dispatch, id]);
 
   return (
     <>

@@ -14,6 +14,22 @@ const HeaderWrapper = styled.header`
   align-items: center;
   width: 100%;
   height: 53px;
+  /* header dim */
+  &:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    margin: 0 0 0 -32px;
+    width: 100%;
+    height: 120px;
+    background-image: linear-gradient(
+      to bottom,
+      ${color.black},
+      ${color.black}b3 70%,
+      ${color.black}00
+    );
+  }
 `;
 
 const HeaderItem = styled.div`
@@ -21,6 +37,7 @@ const HeaderItem = styled.div`
   flex: 1;
   justify-content: ${({ align }) => (align ? align : 'center')};
   gap: 8px;
+  position: relative;
 `;
 
 const UsernameText = styled.h2`
@@ -43,8 +60,8 @@ const DetailHeader = ({ username }) => {
   };
 
   return (
-    <HeaderWrapper>
-      <HeaderItem style={{ marginLeft: '9px' }} align="left">
+    <HeaderWrapper style={{ height: '82px' }}>
+      <HeaderItem align="left">
         <BackBtn type="button" onClick={handleBack}>
           <Icon src={BackArrowIcon} />
         </BackBtn>

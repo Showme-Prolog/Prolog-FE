@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { TopButton } from '@components/common/Button';
+import { useSelector } from 'react-redux';
 import UserContentCard from '../UserContentCard';
 
 const DUMMY_DATA = [
@@ -60,15 +61,24 @@ const TopButtonWrapper = styled.div`
   align-items: center;
 `;
 
-const renderUserContentCard = (data) =>
-  data.map(({ username, src, id }) => (
-    <Link to={{ pathname: `/user/${id}` }} key={id}>
-      <UserContentCard src={src} username={username} key={id} />
-    </Link>
-  ));
-
 const moveOnTop = () => (document.documentElement.scrollTop = 0);
-const UserContentList = () => {
+const UserContentList = ({ isIntroduction = false }) => {
+  const { data, isLoading } = useSelector((state) => state.introduction);
+  console.log(data, isLoading);
+  // console.log(isIntroduction);
+
+  const renderUserContentCard = (data) =>
+    data.map(({ username, src, id }, index) => (
+      <Link to={{ pathname: `/user/${id}` }} key={id}>
+        <UserContentCard
+          src={src}
+          username={username}
+          key={id}
+          blur={!isIntroduction && index !== 0 ? 'blur' : ''}
+        />
+      </Link>
+    ));
+
   return (
     <>
       <UserContentListWrapper>
