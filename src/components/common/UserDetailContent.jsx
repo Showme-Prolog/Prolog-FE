@@ -5,8 +5,8 @@ const UserDetailContent = styled.span`
   ${font.Text2_11px}
   color: ${color.white};
 
-  &:first-of-type {
-    margin-bottom: 1px;
+  &:not(:first-of-type) {
+    margin-top: 4px;
   }
 `;
 

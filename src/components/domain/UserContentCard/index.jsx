@@ -6,6 +6,7 @@ import UserDetailContent from '@components/common/UserDetailContent';
 
 const UserCardWrapper = styled.div`
   position: relative;
+  overflow: hidden;
   width: 100%;
   height: 160px;
   background-color: ${({ src }) => (src ? 'null' : `${color.cheese}`)};
@@ -21,6 +22,29 @@ const UserCardWrapper = styled.div`
   &:last-of-type {
     margin-bottom: 20px;
   }
+  &.blur:after {
+    background-image: ${({ src }) => (src ? `url(${src})` : 'null')};
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    z-index: 10;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(4px);
+  }
+  &:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: ${color.black_40};
+  }
 `;
 
 const UserContentWrapper = styled.div`
@@ -28,6 +52,8 @@ const UserContentWrapper = styled.div`
   height: 100%;
   padding: 18px;
   display: flex;
+  position: relative;
+  z-index: 100;
   flex-direction: column;
   justify-content: flex-end;
 `;
@@ -38,9 +64,9 @@ const UserName = styled.h2`
   margin-bottom: 4px;
 `;
 
-const UserContentCard = ({ src = null, username = '미정', id }) => {
+const UserContentCard = ({ src = null, username = '미정', id, blur }) => {
   return (
-    <UserCardWrapper src={src} key={id}>
+    <UserCardWrapper className={blur ? 'blur' : undefined} src={src} key={id}>
       <UserContentWrapper>
         <UserName>{username}</UserName>
         <UserDetailContent>운영위원회 총무</UserDetailContent>

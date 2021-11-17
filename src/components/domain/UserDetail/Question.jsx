@@ -19,11 +19,11 @@ const QuestionBox = styled.div`
 
 const QuestionText = styled.h3`
   ${font.Text1_14px}
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 `;
 
 const AnswerText = styled.p`
-  ${font.Text2_12px}
+  ${font.Text2_11px}
 `;
 
 const Question = ({ question }) => {
