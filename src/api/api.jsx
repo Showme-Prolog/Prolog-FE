@@ -1,5 +1,5 @@
 import axios from 'axios';
-const SERVER_URL = 'http://3.38.10.254/api';
+const SERVER_URL = '/api';
 
 const Api = ({ url, type = 'GET', params, contentType = 'application/json' }) => {
   const headers = {
