@@ -22,18 +22,8 @@ const UserCardWrapper = styled.div`
   &:last-of-type {
     margin-bottom: 20px;
   }
-  &.blur:after {
-    background-image: ${({ src }) => (src ? `url(${src})` : 'null')};
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    z-index: 10;
-    content: '';
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    filter: blur(4px);
+  &.blur {
+    filter: blur(2px);
   }
   &:before {
     position: absolute;
