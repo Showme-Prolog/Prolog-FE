@@ -19,15 +19,14 @@ const IconWrapper = styled.div`
     right: 0;
     bottom: 0;
     border-radius: 50%;
-    filter: blur(4px);
-    background-image: linear-gradient(134deg, #ff6666 23%, #ffa85f 50%, #ffc629 100%);
+    background-color: ${({ bgColor }) => (bgColor === 'none' ? 'none' : color.white)};
     content: '';
     z-index: -1;
   }
 `;
 
-const Icon = ({ src }) => {
-  return <IconWrapper src={src} />;
+const Icon = ({ src, color = 'none' }) => {
+  return <IconWrapper src={src} bgColor={color} />;
 };
 
 export default Icon;

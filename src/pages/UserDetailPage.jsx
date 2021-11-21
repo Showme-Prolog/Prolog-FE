@@ -2,13 +2,12 @@ import React, { useEffect } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router';
-import color from '@assets/colors/Color';
 import ProfileImage from '@components/domain/UserDetail/ProfileImage';
 import styled from 'styled-components';
 
 import { TopButton } from '@components/common/Button';
 import UserDetailContent from '@components/common/UserDetailContent';
-import DetailHeader from '@components/domain/UserDetail/DetailHeader';
+import { UserDetailHeader } from '@components/common/Header';
 import Question from '@components/domain/UserDetail/Question';
 import { useSelector } from 'react-redux';
 import { fetchIntroduction } from '../redux/introduction';
@@ -99,7 +98,7 @@ const UserDetailPage = () => {
   return (
     <>
       <UserDetailWrapper {...pageHandler}>
-        <DetailHeader username={DUMMY_DATA.username} />
+        <UserDetailHeader username={DUMMY_DATA.username} />
         <InnerWrapper>
           <ProfileImage src={DUMMY_DATA.profile} />
           <UserDetailContentWrapper>{renderDetailContent(DUMMY_DATA)}</UserDetailContentWrapper>

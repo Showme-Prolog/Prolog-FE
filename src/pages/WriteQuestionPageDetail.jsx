@@ -2,6 +2,7 @@ import React from 'react';
 import color from '@assets/colors/Color';
 import font from '@assets/fonts/Font';
 import styled from 'styled-components';
+import { WriteQuestionModalHeader } from '@components/common/Header';
 import Icon from '@components/common/Icon';
 import BackArrowIcon from '@assets/icons/back-arrow.svg';
 
@@ -14,17 +15,9 @@ const ModalWrap = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 32px;
+  padding: 0 32px;
   background-color: rgba(56, 59, 63, 0.94);
   z-index: 1000;
-`;
-
-const ModalBackBtn = styled.button`
-  position: absolute;
-  top: 32px;
-  left: 32px;
-  width: 22px;
-  height: 22px;
 `;
 
 const QuestionWrap = styled.div`
@@ -90,9 +83,7 @@ const WriteQuestionPageDetail = () => {
     <>
       <WriteQuestionPage />
       <ModalWrap>
-        <ModalBackBtn type="button">
-          <Icon src={BackArrowIcon} />
-        </ModalBackBtn>
+        <WriteQuestionModalHeader />
         <QuestionWrap>
           <QuestionNum>01</QuestionNum>
           <QuestionText type="text" />
