@@ -3,7 +3,7 @@ import color from '@assets/colors/Color';
 import font from '@assets/fonts/Font';
 import Icon from '@components/common/Icon';
 import styled from 'styled-components';
-import WriteQuestionHeader from '@components/domain/WriteQuestionHeader/WriteQuestionHeader';
+import { WriteQuestionHeader } from '@components/common/Header';
 import DelIcon from '@assets/icons/del-bar.svg';
 
 const SectionQuestion = styled.section`
@@ -66,7 +66,7 @@ const QuestionListItemButton = styled.button`
 const WriteQuestionPage = () => {
   return (
     <>
-      <WriteQuestionHeader username="최민석" />
+      <WriteQuestionHeader />
       {/* 세부사항 질문 */}
       <SectionQuestion>
         <SectionTitle>세부사항 질문</SectionTitle>

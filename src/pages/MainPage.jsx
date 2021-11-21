@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import UserContentList from '@components/domain/UserContentList';
-import MainHeader from '@components/domain/MainHeader';
+import { MainHeader } from '@components/common/Header';
 import { fetchIntroductionList } from '../redux/introduction';
 
 // 추가해야 할 로직
